@@ -24,7 +24,7 @@ class Product
     private ?string $prix = null;
 
     #[ORM\Column(length: 255)]
-    private ?string $quantité = null;
+    private ?string $quantite = null;
 
     #[ORM\Column(length: 255)]
     private ?string $articleBlog = null;
@@ -70,14 +70,14 @@ class Product
         return $this;
     }
 
-    public function getQuantité(): ?string
+    public function getQuantite(): ?string
     {
-        return $this->quantité;
+        return $this->quantite;
     }
 
-    public function setQuantité(string $quantité): self
+    public function setQuantite(string $quantité): self
     {
-        $this->quantité = $quantité;
+        $this->quantité = $quantite;
 
         return $this;
     }
