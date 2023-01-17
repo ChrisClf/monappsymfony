@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}CategorieBlog index{% endblock %}
+
+{% block body %}
+    <h1>CategorieBlog index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Chat</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for categorie_blog in categorie_blogs %}
+            <tr>
+                <td>{{ categorie_blog.id }}</td>
+                <td>{{ categorie_blog.chat }}</td>
+                <td>
+                    <a href="{{ path('app_categorie_blog_show', {'id': categorie_blog.id}) }}">show</a>
+                    <a href="{{ path('app_categorie_blog_edit', {'id': categorie_blog.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_categorie_blog_new') }}">Create new</a>
+{% endblock %}
